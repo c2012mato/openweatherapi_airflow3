@@ -43,62 +43,6 @@ The pipeline follows a simple, yet effective, data flow:
 - **Executor**: Airflow `LocalExecutor`
 - **Containerization**: [Docker](https://www.docker.com/) & [Docker Compose](https://docs.docker.com/compose/)
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- [Docker](https://www.docker.com/get-started) and [Docker Compose](https://docs.docker.com/compose/install/)
-- An API key from [OpenWeatherMap](https://home.openweathermap.org/api_keys)
-
-### Installation
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/c2012mato/openweatherapi_airflow3.git
-    cd openweatherapi_airflow3
-    ```
-
-2.  **Set up environment variables:**
-    Create a `.env` file in the root of the project and add your OpenWeatherMap API key:
-    ```env
-    OPENWEATHER_API_KEY=your_api_key_here
-    ```
-
-3.  **Configure Airflow Connections:**
-    You'll need to set up an Airflow connection for your PostgreSQL database. This can be done via the Airflow UI once it's running.
-    - **Conn Id**: `postgres_default`
-    - **Conn Type**: `Postgres`
-    - **Host**: `postgres`
-    - **Schema**: `airflow`
-    - **Login**: `airflow`
-    - **Password**: `airflow`
-    - **Port**: `5432`
-
-    Also, add your OpenWeather API key as an Airflow Variable.
-    - **Key**: `OPENWEATHER_API_KEY`
-    - **Value**: `your_api_key_here`
-
-4.  **Build and run the services:**
-    ```bash
-    docker-compose up --build
-    ```
-
-### Accessing the Services
-
-- **Airflow UI**: [http://localhost:8080](http://localhost:8080) (Login with `airflow`/`airflow`)
-- **pgAdmin**: [http://localhost:5050](http://localhost:5050)
-- **Metabase**: [http://localhost:3000](http://localhost:3000)
-
-## 📖 Usage
-
-1.  **Enable the DAG**: Open the Airflow UI, find the `weather_etl_dag`, and enable it.
-2.  **Trigger the DAG**: You can wait for the scheduled run or trigger it manually from the UI.
-3.  **View Data in pgAdmin**: Once the DAG has run successfully, you can connect to the PostgreSQL server in pgAdmin to see the newly populated tables.
-4.  **Create Dashboards in Metabase**:
-    - Log in to Metabase and set up a new database connection to your PostgreSQL instance.
-    - Use the same credentials as the Airflow connection. The hostname will be `postgres`.
-    - Start exploring the data and building your dashboards!
-
 ## 📁 Project Structure
 
 ```
@@ -111,10 +55,6 @@ The pipeline follows a simple, yet effective, data flow:
 ├── Dockerfile            # Dockerfile for the Airflow image
 └── README.md
 ```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
 
