@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.env
+.venv/
+venv/
+ENV/
+
+# Airflow
+logs/
+dags/__pycache__/
+plugins/__pycache__/
+airflow.cfg
+webserver_config.py
+unittests.cfg
+
+# Docker / Compose
+.docker/
+docker-compose.override.yml
+docker-compose.override.*.yml
+*.pid
+*.sock
+
+# Postgres / DB
+postgres-data/
+pg_data/
+*.db
+
+# Secrets
+.env
+.env.*
+secrets/
+*.key
+*.pem
+*.crt
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+logs/
